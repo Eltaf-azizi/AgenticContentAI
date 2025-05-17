@@ -26,8 +26,3 @@ def research_topic(topic: str) -> str:
     except Exception as e:
         return f"[Error] {str(e)}"
     
-
-
-if __name__ == '__main__':
-    topic_summary = research_topic("generative AI")
-    print(topic_summary)
