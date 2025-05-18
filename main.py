@@ -28,3 +28,13 @@ def main():
     print("\n🖌️ Editting & Optimizing...")
     final_content = edit_content(draft)
     print("\n✅ Final Edited Content:\n", final_content)
+
+
+    print("\n🖼️ Generating Visual...")
+    image_url = generate_image(topic)
+    print("\n🌄 Image URL:\n", image_url)
+
+
+
+if __name__ == "__main__":
+    main()
