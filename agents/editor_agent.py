@@ -7,7 +7,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-def edit_content(draftL str) -> str:
+def edit_content(draft: str) -> str:
     prompt = f"""
     You are a professional content editor. Take the following draft and improve it by:
     - Fixing grammar and puctuation
