@@ -6,5 +6,25 @@ from agents.image_agent import generate_image
 
 
 def main():
-    print("🚀 Welcome to AgentX - AI-Powered content Creator")
+    print("🚀 Welcome to AgenticX - AI-Powered content Creator")
     topic = input("🔍 Enter your content topic or brief: ")
+
+
+    print("\n📚 Researching...")
+    background = research_topic(topic)
+    print("\n🔍 Background Info:\n", background)
+
+
+    print("\n🧠 Generating Outline...")
+    outline = generate_outline(topic, background)
+    print("\n📝 Content Outline:\n", outline)
+
+
+    print("\n✍️ Writting First Draft...")
+    draft = write_draft(topic, outline)
+    print("\n📄 Content Draft:\n", draft)
+
+
+    print("\n🖌️ Editting & Optimizing...")
+    final_content = edit_content(draft)
+    print("\n✅ Final Edited Content:\n", final_content)
