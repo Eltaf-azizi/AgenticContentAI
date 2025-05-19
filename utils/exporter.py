@@ -35,3 +35,10 @@ def save_as_pdf(content: str, topic: str) -> str:
 
     for line in Cleaned_content.split("\n"):
         pdf.multi_cell(0, 10, line)
+
+
+    
+    filename = f"{topic.replace(' ', '_').lower()}.pdf"
+    filepath = os.path.join(EXPORT_DIR, filename)
+    pdf.output(filepath)
+    return filename
