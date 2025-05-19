@@ -48,5 +48,25 @@ def outline_tool(topic: str, context: str) -> str:
     Include: intro, 4-6 sections with bullet points, and a conclusion.
     """
     response = client.chat.completions.cerate(
-        
+        model = "gpt-4",
+        messages = [{"role": "user", "content": prompt}],
+        temprature = 0.5,
+        max_tokens=700
     )
+
+    return response.choices[0].messages.content.strip()
+
+
+
+
+@tool
+def writer_tool(topic: str, outline: str) -> str:
+    """Generate a content draft from an outline and topic."""
+
+    prompt = f"""
+    You are a professional content writer. Based on the topic and outline below, write a full-length content draft.
+
+
+    Topic: {topic}
+    Outline: {outline}
+    """
