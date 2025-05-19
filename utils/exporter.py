@@ -22,3 +22,16 @@ def save_as_markdown(content: str, topic: str) -> str:
 
 def save_as_pdf(content: str, topic: str) -> str:
     os.makedirs(EXPORT_DIR, exit_ok=True)
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+
+
+
+    # Fix for Unicode characters that fpdf (latin-1) can't encode
+    cleaned_content = content.encode("latin-1", "replace").decode("latin-1")
+
+
+    for line in Cleaned_content.split("\n"):
+        pdf.multi_cell(0, 10, line)
