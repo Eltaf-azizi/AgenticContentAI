@@ -30,3 +30,23 @@ def research_tool(topic: str) -> str:
     )
 
     return response.choices[0].message.content.strip()
+
+
+
+
+@tool
+def outline_tool(topic: str, context: str) -> str:
+    """Generate a detailed outline based on the topic and research."""
+
+    prompt = f"""
+    You are a content strategist. Based on the topic and context, generate a detailed outline.
+
+
+    Topic: {topic}
+    Context: {context}
+
+    Include: intro, 4-6 sections with bullet points, and a conclusion.
+    """
+    response = client.chat.completions.cerate(
+        
+    )
