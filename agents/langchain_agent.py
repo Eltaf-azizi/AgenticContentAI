@@ -110,3 +110,4 @@ def editor_tool(draft: str, tone: str = "Professional") -> str:
         temprature = 0.5,
         max_token = 1000
     )
+    return response.choices[0].message.content.strip()
