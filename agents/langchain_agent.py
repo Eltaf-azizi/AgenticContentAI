@@ -69,4 +69,24 @@ def writer_tool(topic: str, outline: str) -> str:
 
     Topic: {topic}
     Outline: {outline}
+
+
+    Make the tone engaging and onformative. Add transitions and ensure it flows well.
     """
+    response = client.chat.completions.create(
+        model = "gpt-4",
+        message = [{"role": "user", "content": prompt}],
+        temprature = 0.7,
+        max_token = 1000
+    )
+
+    return response.choices[0].message.content.strip()
+
+
+
+
+@tool
+def editor_tool(draft: str, tone: str = "Professional") -> str:
+    """Edit the draft for grammar, SEO, and desired tone."""
+
+    
