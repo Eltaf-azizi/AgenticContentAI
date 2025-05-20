@@ -34,5 +34,31 @@ outline_chain = RunnableLambda(lambda x: {
 
 # Step 3: Write Draft
 write_chain = RunnableLambda(lambda x: {
-    
+    "topic": x["topic"],
+    "draft": writer_tool.invoke({
+        "topic": x["topic"],
+        "outline": x["outline"]
+    })
 })
+
+
+
+# Step 4: Edit with Tone
+edit_chain = RunnableLambda(lambda x: {
+    "final": editor_tool.invoke({
+        "draft": x["draft"],
+        "tone": x.get("tone", "Professional")
+    })
+})
+
+
+
+# Step 5: SEO Keywords Extraction
+seo_chain = RunnableLambda(lambda x: {
+    "final": x["final"],
+    "keywords": seo_tool.invoke(x["final"])
+})
+
+
+# Combined the chain
+chain = research_chain | outline_chain | write_chain | edit_chain | seo_chain
