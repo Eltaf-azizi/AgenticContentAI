@@ -31,3 +31,22 @@ class AgentState(TypedDict):
 def research_node(state: AgentState) -> AgentState:
     context = research_tool.invoke(state["topic"])
     return {**state, "context": context}
+
+
+
+
+
+# Node: Outline
+def outline_node(state: AgentState) -> AgentState:
+    outline = outline_tool.invoke({
+        "topic": state["topic"],
+        "context": state["context"]
+    })
+    return {**state, "outline": outline}
+
+
+
+def writer_node(staet: AgentState) -> AgentState:
+    draft = writer_tool.invoke({
+        
+    })
