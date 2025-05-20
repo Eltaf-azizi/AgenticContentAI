@@ -12,3 +12,22 @@ from agents.langchain_agent import (
 
 # Define state type
 from typing import TypedDict
+
+
+
+class AgentState(TypedDict):
+    topic: str
+    tone: str
+    context: str
+    outline: str
+    draft: str
+    final: str
+    keywords: str
+
+
+
+
+# Node: Research
+def research_node(state: AgentState) -> AgentState:
+    context = research_tool.invoke(state["topic"])
+    return {**state, "context": context}
