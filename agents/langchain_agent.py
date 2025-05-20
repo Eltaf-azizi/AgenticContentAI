@@ -89,4 +89,24 @@ def writer_tool(topic: str, outline: str) -> str:
 def editor_tool(draft: str, tone: str = "Professional") -> str:
     """Edit the draft for grammar, SEO, and desired tone."""
 
-    
+    prompt = f"""
+    You are a content editor. Improve the following content by:
+    - Fixing grammar and puctuation
+    - Enhancing readability and SEO
+    - Making it more {tone.lower()} in tone
+
+
+    Draft:
+    {draft}
+
+
+    Return the polished version.
+    """
+
+
+    response = client.chat.completions.create(
+        model = "gpt-4",
+        messages = [{"role": "user", "content": prompt}],
+        temprature = 0.5,
+        max_token = 1000
+    )
