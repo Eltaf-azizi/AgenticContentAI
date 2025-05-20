@@ -111,3 +111,31 @@ def editor_tool(draft: str, tone: str = "Professional") -> str:
         max_token = 1000
     )
     return response.choices[0].message.content.strip()
+
+
+
+
+
+@tool
+def seo_tool(content: str) -> str:
+    """Extract 5-10 SEO keywords from the final content."""
+
+    prompt = """
+    You are an SEO specialist. Analyze the following content and extract the top 5-10 keywords or ohrases
+    that would help this content rank well in search engines.
+
+
+
+    Content:
+    {content}
+
+
+    Return the keywords as a comma-seperated list
+    """
+    response = client.chat.completions.create(
+        model = "gpt-4",
+        messages = [{"role": "user", "content": prompt}],
+        tmprature = 0.3,
+        max_token = 200
+    )
+    return response.choices[0].message.content.strip()
