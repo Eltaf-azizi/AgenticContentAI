@@ -55,5 +55,18 @@ def index():
             "index.html",
             topic = topic,
             content_type = content_type,
-            tone = tone
+            tone = tone,
+            pipeline = pipeline,
+            content = final_content,
+            seo_keywords = seo_keywords,
+            image_url = image_url,
+            md_link = md_link,
+            pdf_link = pdf_link
         )
+    
+
+    return render_template("index.html", topic=None)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
