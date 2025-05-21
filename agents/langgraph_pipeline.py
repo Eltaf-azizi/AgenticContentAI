@@ -85,3 +85,19 @@ builder.add_node("outline_node", RunnableLambda(outline_node))
 builder.add_node("writer_node", RunnableLambda(writer_node))
 builder.add_node("editor_node", RunnableLambda(editor_node))
 builder.add_node("seo_node", RunnableLambda(seo_node))
+
+
+
+builder.set_entry_point("research_node")
+builder.add_edge("research_node", "outline_node")
+builder.add_edge("outline_node", "writer_node")
+builder.add_edge("writer_node", "editor_node")
+builder.add_edge("editor_node", "seo_node")
+
+
+builder.set_finish_point("seo_node")
+
+
+
+# Export graph
+graph = builder.compile()
