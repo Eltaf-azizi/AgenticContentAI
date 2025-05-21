@@ -46,7 +46,26 @@ def outline_node(state: AgentState) -> AgentState:
 
 
 
-def writer_node(staet: AgentState) -> AgentState:
+# Node: Writer
+def writer_node(state: AgentState) -> AgentState:
     draft = writer_tool.invoke({
-        
+        "topic": state["topic"],
+        "outline": state["outline"]
     })
+    return {**state, "draft": draft}
+
+
+
+# Node: Editor (with tone)
+def editor_node(state: AgentState) -> AgentState:
+    final = editor_tool.invoke({
+        "draft": state["draft"],
+        "tone": state.get("tone", "Professional")
+    })
+    return {**state, "final": final}
+
+
+
+
+# Node: SEO
+def seo_node(state: AgentState) - > AgentState:
