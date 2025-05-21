@@ -10,3 +10,5 @@ from utils.exporter import save_as_markdown, save_as_pdf
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
+def index():
+    if 
