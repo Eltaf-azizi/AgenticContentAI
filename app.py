@@ -33,3 +33,27 @@ def index():
                 "topic": combined_topic,
                 "tone": tone
             })
+
+
+        final_content = result["final"]
+        seo_keywords = result["keywords"]
+
+
+        image_url = generate_image(topic)
+
+
+
+        md_filename = save_as_markdown(final_content, topic)
+        pdf_filename = save_as_pdf(final_content, topic)
+
+
+        md_link = url_for("static", filename=f"exports/{md_filename}")
+        pdf_link = url_for("static", filename=f"exports/{pdf_filename}")
+
+
+        return render_template(
+            "index.html",
+            topic = topic,
+            content_type = content_type,
+            tone = tone
+        )
