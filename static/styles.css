@@ -75,3 +75,60 @@ main {
     border-color: #9d50bb;
     box-shadow: 0 0 0 2px rgba(157, 80, 187, 0.1);
 }
+.generate-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(90deg, #6e48aa, #9d50bb);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(110, 72, 170, 0.3);
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .generator-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 0.7rem 0.9rem;
+    }
+    
+    .generate-btn {
+        padding: 0.9rem;
+    }
+}
