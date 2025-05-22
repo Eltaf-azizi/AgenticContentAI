@@ -13,7 +13,48 @@
             <h1>AgentX - AI-Powered Content Generator</h1>
         </header>
 
-        
+        <main>
+            <form class="generator-form">
+                <div class="form-group">
+                    <label for="topic">Enter Your Topic</label>
+                    <input type="text" id="topic" placeholder="write a blog article on Top 5 Data Analytics tools in 2025" >
+                </div>
+
+                <div class="form-group">
+                    <label for="content-type">Select Content Type</label>
+                    <select id="content-type">
+                        <option>Blog Article</option>
+                        <option>Social Media Post</option>
+                        <option>Product Description</option>
+                        <option>Email Newsletter</option>
+                        <option>Press Release</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tone">Select Tone</label>
+                    <select id="tone">
+                        <option>Professional</option>
+                        <option>Casual</option>
+                        <option>Friendly</option>
+                        <option>Authoritative</option>
+                        <option>Humorous</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pipeline">Select Pipeline Type</label>
+                    <select id="pipeline">
+                        <option>Classic Chain</option>
+                        <option>Agentic Workflow</option>
+                        <option>Parallel Processing</option>
+                        <option>Custom Pipeline</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="generate-btn">Generate</button>
+            </form>
+        </main>
     </div>
 </body>
 </html>
