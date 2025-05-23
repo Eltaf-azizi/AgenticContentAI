@@ -9,3 +9,27 @@
 - **Web Dashboard**: User-friendly interface to manage agents and outputs.
 - **Export Flexibility**: Supports Markdown, PDF, and HTML formats.
 - **Fine-Tuned ML Models**: Custom NLP pipelines for domain-specific content.
+
+
+## 📂 Project Structure
+    euron-ai/
+    ├── agents/ # Autonomous agent modules
+    │ ├── editor_agent.py # Proofreading and style refinement
+    │ ├── image_agent.py # Visual content generation
+    │ ├── langchain_agent.py # LangChain-based agent core
+    │ ├── langchain_pipeline.py # Chained LLM workflows
+    │ ├── langgraph_pipeline.py # Graph-based agent orchestration
+    │ ├── outline_agent.py # Content structure generation
+    │ ├── research_agent.py # Web/data source research
+    │ └── writer_agent.py # Draft content generation
+    ├── static/ # Frontend assets
+    │ ├── exports/ # Generated content (PDF/Markdown)
+    │ ├── styles.css # Dashboard styling
+    ├── templates/ # HTML templates
+    │ └── index.html # Web interface
+    ├── utils/ # Helper scripts
+    │ └── exporter.py # Export content to files
+    ├── machine_learning.md # ML model documentation
+    ├── machine_learning.pdf # Technical whitepaper
+    ├── app.py # FastAPI/Flask backend
+    └── main.py # CLI entry point
