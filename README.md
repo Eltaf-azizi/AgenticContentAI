@@ -33,3 +33,28 @@
     ├── machine_learning.pdf # Technical whitepaper
     ├── app.py # FastAPI/Flask backend
     └── main.py # CLI entry point
+
+
+## 🛠️ Usage
+
+### 1. Run the Web Interface
+```bash
+python app.py  # Starts backend at http://localhost:5000
+```
+
+2. CLI Mode (Agent Orchestration)
+```bash
+python main.py --task "Write a 1000-word blog about AI ethics" --agents research writer editor
+```
+
+
+3. Custom Agent Workflow
+```python
+from agents.research_agent import ResearchAgent
+from agents.writer_agent import WriterAgent
+
+research = ResearchAgent(topic="Quantum Computing")
+sources = research.execute()
+content = WriterAgent(sources=sources).generate()
+```
+
