@@ -76,3 +76,11 @@ langchain >=0.1.0
 fastapi
 pytorch
 transformers
+```
+
+## Contributions
+
+Contributions are **welcome!** Feel free to fork the repository and submit a pull request. I would appreciate your help, whether it's a bug fix, a new feature, or just a typo correction. 
+
+<h3 align="center">Happy Coding!</h3>
+
