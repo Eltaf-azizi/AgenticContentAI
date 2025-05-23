@@ -68,3 +68,11 @@ content = WriterAgent(sources=sources).generate()
 | image_agent	    | Generates visuals	Stable      | Diffusion
 | langgraph_agent	| Coordinates agent workflows	| LangGraph, Redis
 
+
+## 📦 Dependencies
+```text
+Python 3.10+
+langchain >=0.1.0
+fastapi
+pytorch
+transformers
