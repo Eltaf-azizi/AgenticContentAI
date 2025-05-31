@@ -60,8 +60,8 @@ content = WriterAgent(sources=sources).generate()
 
 ## 🤖 Agent Roles
 | AGENT	            | RESPONSIBILITY	            | KEY TOOLS
-| research_agent	| Gathers sources/evidence	    | LangChain, SerpAPI
 |-------------------|-------------------------------|------------------
+| research_agent	| Gathers sources/evidence	    | LangChain, SerpAPI
 | outline_agent	    | Creates content structure	    | GPT-4, Markdown
 | writer_agent	    | Generates draft content	    | Fine-tuned LLMs
 | editor_agent	    | Improves clarity/grammar	    | Prodigy, StyleGAN
